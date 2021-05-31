@@ -2,7 +2,7 @@ from setuptools import setup
 
 
 
-VERSION="0.35"
+VERSION="0.36"
 
 
 with open('README.rst', 'r', encoding='utf-8') as f:
@@ -13,7 +13,8 @@ setup(
     packages = ['webbot','webbot.drivers'] ,
     version = VERSION , 
     long_description = long_description , 
-    install_requires = ['selenium'] , 
+    install_requires = ['selenium', 'ipython'], 
+    extras_require={'dev': ['black']},
     package_data = {'' : [r'drivers/*']},
     description = 'Web Browser automation and testing library for python with more features and simpler api than selenium' ,
     author = 'Natesh M Bhat' ,
