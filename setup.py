@@ -2,16 +2,14 @@ from setuptools import setup
 
 
 
-VERSION="0.34"
+VERSION="0.35"
 
 
 with open('README.rst', 'r', encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='webbot',
-
-
+    name='mmwebbot',
     packages = ['webbot','webbot.drivers'] ,
     version = VERSION , 
     long_description = long_description , 

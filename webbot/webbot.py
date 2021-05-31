@@ -3,6 +3,7 @@ import re
 import string
 import errno
 import sys
+from shutil import which
 from collections import OrderedDict
 
 from selenium import webdriver
@@ -37,8 +38,12 @@ class Browser:
         - List containing all the errors which might have occurred during performing an action like click ,type etc.
     """
 
-    def __init__(self, showWindow=True, proxy=None , downloadPath:str=None):
-        options = webdriver.ChromeOptions()
+    def __init__(self, showWindow=True, proxy=None , downloadPath:str=None, options=None, browser_executable=None):
+        if not options:
+            options = webdriver.ChromeOptions()
+        if browser_executable:
+            options.binary_location = which(browser_executable)
+        print(which(browser_executable))
         options.add_argument("--disable-dev-shm-usage")
         options.add_argument("--no-sandbox")
         if downloadPath is not None and isinstance(downloadPath,str):
