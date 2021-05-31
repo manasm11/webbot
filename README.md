@@ -1,3 +1,5 @@
+# COPIED THE PACKAGE FOR CUSTOM USAGE
+
 <p align="center">
   <img src=".github/logo.svg?sanitize=true" width="230px" height="230px">
 </p>
